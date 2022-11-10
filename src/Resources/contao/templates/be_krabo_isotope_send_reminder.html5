@@ -1,0 +1,30 @@
+<div class="tl_listing_container">
+
+<form class="tl_two_factor_form" method="post">
+  <fieldset class="tl_tbox nolegend">
+    <input type="hidden" name="FORM_SUBMIT" value="krabo_isotope_reminder">
+    <input type="hidden" name="REQUEST_TOKEN" value="<?= REQUEST_TOKEN ?>">
+        <div class="widget w50 clr">
+          <h3><label for="notification"<?php if ($this->error): ?> class="error"<?php endif; ?>><?= $this->trans('tl_iso_product_collection.notification.0') ?></label></h3>
+          <select class="tl_select" name="notification">
+            <?php foreach ($this->notifications as $notificationId => $notificationTitle): ?>
+                <option value="<?=$notificationId; ?>"><?= $notificationTitle; ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+    <div class="widget w50 clr">
+      <h3><label for="reminder_type"<?php if ($this->error): ?> class="error"<?php endif; ?>><?= $this->trans('tl_iso_product_collection.krabo_isotope_send_reminder_type.0') ?></label></h3>
+      <select class="tl_select" name="reminder_type">
+        <option value="1"><?= $this->trans('tl_iso_product_collection.krabo_isotope_send_reminder_types.1') ?></option>
+        <option value="2"><?= $this->trans('tl_iso_product_collection.krabo_isotope_send_reminder_types.2') ?></option>
+      </select>
+    </div>
+  </fieldset>
+  <div class="tl_formbody_submit">
+      <div class="tl_submit_container">
+        <button type="submit" class="tl_submit"><?= $this->trans('tl_iso_product_collection.krabo_isotope_send_reminder.0') ?></button>
+      </div>
+  </div>
+</form>
+
+</div>
